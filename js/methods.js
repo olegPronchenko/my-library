@@ -52,7 +52,7 @@ App.Methods.View = function(object) {
 
           if(models.group) models.group(canvas, layer, group, indexView);
           if(models.layer) models.layer(canvas, layer, indexView);
-
+          
 		      if(models.dataModel[0].image) {
 	          App.Methods.LoadImages(models.dataModel,function(img, d, i){
 
@@ -177,49 +177,15 @@ App.Methods.Slider = function(obj){
               allSlide = this.dataModel.length,
               activatePop = false;
 
-
-/*int.start([
-  {
-    step: (obj.interval)+(obj.speed),
-    minus: true,
-    autoplay: true,
-    //changeFirstCount: -1,
-    changeLastCount: 0,
-    //checkFirst: 0,
-    //checkLast: 10,
-    lastCount: -3,
-    //stopInterval: true,
-    startInterval: function(n){
-
-
-      var tween = new Konva.Tween({
-          node: group,
-          duration: obj.speed/1000,
-          x: App.Methods.Responsive(obj.width, layer.width())*n
-      });
-
-      tween.play();
-
-    },
-    endInterval: function(n,v){
-      if(v === 'first') {}
-      else if(v === 'last') {
-        //console.log(n);
-      }
-    }
-  }
-]);*/
-
-
             interval = setInterval(function(){
-
-              if(activatePop) App.Methods.dataResponsive.pop();
+              count--;
+/*              if(activatePop) App.Methods.dataResponsive.pop();
 
               App.Methods.dataResponsive.push(function(){
-                group.x( App.Methods.Responsive(obj.width, layer.width())*(count===0?(-(allSlide-1)):count+1) );
+                group.x( App.Methods.Responsive(obj.width, layer.width())*(count===0?(-(allSlide+1)):count) );
               });
-
-              activatePop = true;
+              
+              activatePop = true;*/
 
               var tween = new Konva.Tween({
                   node: group,
@@ -229,14 +195,11 @@ App.Methods.Slider = function(obj){
 
               tween.play();
 
-              //if(count === 0)
-               // count = 0;
-               console.log(count);
               if(count === (-(allSlide-1))) {
                 count = 1;
               }
 
-              count--;
+              
             },(obj.interval)+(obj.speed));
 
 

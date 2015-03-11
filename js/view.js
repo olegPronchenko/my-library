@@ -4,7 +4,11 @@
 
 
 App.Methods.WidthCanvas();
+
+// all functions for responsive
 App.Methods.dataResponsive.push(App.Methods.WidthCanvas);
+
+// function for event 'resize'
 App.Methods.Resize(App.Methods.dataResponsive);
 
 
