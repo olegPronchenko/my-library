@@ -4,7 +4,7 @@
 var App = {
     Canvas: {},
     Models: {},
-    Methods: {}
+    Prototypes: {}
 };
 
 App.Canvas.MainWidth = 800;

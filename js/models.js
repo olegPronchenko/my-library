@@ -5,7 +5,7 @@ App.Models.dataRect = [
   {
     x: 20,
     y: 20,
-    width: App.Canvas.Stage.getWidth()-40,
+    width: 800-40,
     height: 400,
     fill: '#999',
     strokeWidth: 1
@@ -14,14 +14,14 @@ App.Models.dataRect = [
   {
     width: 300,
     height: 560,
-    x: (App.Canvas.Stage.getWidth()/2)-(300/2),
+    x: (800/2)-(300/2),
     y: 400+20,
     fill: '#666',
     strokeWidth: 1
   },
 
   {
-    width: ((App.Canvas.Stage.getWidth()-40)-300)/2,
+    width: ((800-40)-300)/2,
     height: 200,
     x: 20,
     y: 400+20+40,
