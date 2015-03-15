@@ -75,28 +75,23 @@ App.Models.dataCircle = [
   },
 ];
 
-App.Models.dataImages = [
-  {
-    x: 50,
-    y: 100,
-    stroke: 'black',
-    image: 'http://cdn-static.denofgeek.com/sites/denofgeek/files/0/00//darksidersdeath.jpg',
-    strokeWidth: 4,
-    width: 156,
+
+App.Models.dataCircleAll = [];
+
+for(var i = 0; i < 30; i++) 
+  App.Models.dataCircleAll.push({
+    x: Math.random() * App.Canvas.Stage.getWidth(),
+    y: Math.random() * App.Canvas.Stage.getHeight(),
+    radius: 40,
+    fill: '#999',
     draggable: true,
-    height: 118
-  },
-  {
-    x: 150,
-    y: 200,
-    stroke: 'black',
-    image: 'http://opiumpulses.com/wp-content/uploads/2014/08/DarksidersII-5.jpg',
     strokeWidth: 4,
-    width: 136,
-    draggable: true,
-    height: 118
-  }
-];
+    shadowColor: 'black',
+    shadowBlur: 10,
+    shadowOffset: {x : 10, y : 10},
+    shadowOpacity: 0.3
+  });
+
 
 
 App.Models.dataText = [

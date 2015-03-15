@@ -7,20 +7,19 @@
 
 
 // Create new layers and adding new models
-App.Prototypes = new ViewKonva(function(obj){
+App.Views = new ViewKonva(function(mainObj){
 
-  obj.WidthCanvas();
-  obj.dataResponsive.push(function(){
-    obj.WidthCanvas();
+  mainObj.dataResponsive.push(function(){
+    mainObj.WidthCanvas();
   });
-  obj.Resize(obj.dataResponsive);
+  mainObj.Resize(mainObj.dataResponsive);
 
   return [
-
+    // slider
     {
       models: [
-        obj.Slider({
-          slides:App.Models.dataSlider,
+        mainObj.Slider({
+          slides: App.Models.dataSlider,
           width: 600,
           height: 400,
           x: 100,
@@ -28,6 +27,31 @@ App.Prototypes = new ViewKonva(function(obj){
           speed: 500,
           interval: 2000
         })
+      ]
+    },
+
+    // Circles
+    {
+      models: [
+        {
+          dataModel: App.Models.dataCircleAll,
+          render: function(stage, layer, data, index){
+              this.model = new Konva.Circle(data);
+          },
+          initialize: function(stage, layer, models, index){
+
+/*            for(var i = 0; i < this.dataModel.length; i++) 
+              new Konva.Tween({
+                node: models,
+                duration: 4,
+                x: Math.random() * stage.width(),
+                y: Math.random() * stage.height(),
+              }).play();*/
+
+          },
+          layer: function(stage, layer, index){},
+          group: function(stage, layer, group, index){}
+        }
       ]
     }
 
