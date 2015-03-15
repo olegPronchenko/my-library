@@ -16,19 +16,19 @@ App.Views = new ViewKonva(function(mainObj){
 
   return [
     // slider
-    {
+/*    {
       models: [
         mainObj.Slider({
           slides: App.Models.dataSlider,
           width: 600,
           height: 400,
           x: 100,
-          y: 100,
+          y: 50,
           speed: 500,
           interval: 2000
         })
       ]
-    },
+    },*/
 
     // Circles
     {
@@ -40,13 +40,13 @@ App.Views = new ViewKonva(function(mainObj){
           },
           initialize: function(stage, layer, models, index){
 
-/*            for(var i = 0; i < this.dataModel.length; i++) 
+            for(var i = 0; i < this.dataModel.length; i++) 
               new Konva.Tween({
                 node: models,
                 duration: 4,
                 x: Math.random() * stage.width(),
                 y: Math.random() * stage.height(),
-              }).play();*/
+              }).play();
 
           },
           layer: function(stage, layer, index){},

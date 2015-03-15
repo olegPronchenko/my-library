@@ -78,11 +78,11 @@ App.Models.dataCircle = [
 
 App.Models.dataCircleAll = [];
 
-for(var i = 0; i < 30; i++) 
+for(var i = 0; i < 50; i++) 
   App.Models.dataCircleAll.push({
     x: Math.random() * App.Canvas.Stage.getWidth(),
     y: Math.random() * App.Canvas.Stage.getHeight(),
-    radius: 40,
+    radius: 20,
     fill: '#999',
     draggable: true,
     strokeWidth: 4,

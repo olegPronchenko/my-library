@@ -33,7 +33,7 @@ function ViewKonva(array) {
               if(models.model) {
                 group.add(models.model);
               } else messageError('model! '+path );
-              
+
               layer.add(group);
               stage.add(layer);
 
@@ -249,13 +249,11 @@ ViewKonva.prototype.Slider = function(obj) {
                 group.x( mainObj.Responsive(obj.width, layer.width())*(count) );
               });
               activatePop = true;
-
-              var tween = new Konva.Tween({
+              new Konva.Tween({
                   node: group,
                   duration: obj.speed/1000,
                   x: mainObj.Responsive(obj.width, layer.width())*count
-              });
-              tween.play();
+              }).play();
             },
             checkCountInterval: function(count, check){
               if(check() === 'end') {}
