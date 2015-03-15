@@ -12,6 +12,7 @@ App.Views = new ViewKonva(function(mainObj){
   mainObj.dataResponsive.push(function(){
     mainObj.WidthCanvas();
   });
+  
   mainObj.Resize(mainObj.dataResponsive);
 
   return [
